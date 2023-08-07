@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "5d1c2c04-f5d9-4e98-bcfd-f020a7884a4c",
+		"name": "Training Karyawan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27911712"
+	},
+	"item": [
+		{
+			"name": "API Register",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ivanhaikal@gmail.com\",\r\n    \"name\": \"Ivan\",\r\n    \"phone_number\": \"08123456789\",\r\n    \"domicile\": \"Semarang\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"password\": \"password\",\r\n    \"interest\": \"Sport\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user-register/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user-register",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ivanhaikal@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user-register/send-otp",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user-register",
+								"send-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm OTP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/user-register/register-confirm-otp/144991",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user-register",
+								"register-confirm-otp",
+								"144991"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ivanhaikal@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user-login/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user-login",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin Google",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "accessToken",
+									"value": "ya29.a0AfB_byAzUmqDJWwEDEMpTeOLswyWibvCodXPpRLM_uaKKIRvBJGwMSJUKgfeSDowMJ9_8G3odsv3Zd6v7G7ItOgi40Qtl9TNRooRmaKRL3Qxn87Fz3VGcWtO5DerL4YT2DA41ulseAsfQYcTmRI8Nk_NcyLpaCgYKAZMSARESFQHsvYls_bxLpboT9lI_htdStbO8HA0163",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/user-login/signin_google",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user-login",
+								"signin_google"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Forget Password",
+			"item": [
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ivanhaikal@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/forget-password/send",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"forget-password",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ivanhaikal@gmail.com\",\r\n    \"otp\" : \"4855\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/forget-password/validate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"forget-password",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ivanhaikal@gmail.com\",\r\n    \"newPassword\" : \"password01\",\r\n    \"otp\" : \"4855\",\r\n    \"confirmNewPassword\" : \"password01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/forget-password/change-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"forget-password",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File Upload",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ivanh/Pictures/sampul.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/upload",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/showFile/0782023072314.png",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"showFile",
+								"0782023072314.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Karyawan",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"alamat\": \"Semarang\",\r\n  \"detailKaryawan\": {\r\n    \"nik\": \"3374\",\r\n    \"npwp\": \"1234\"\r\n  },\r\n  \"dob\": \"2000-02-21\",\r\n  \"nama\": \"Ivan\",\r\n  \"status\": \"Single\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"alamat\": \"string\",\r\n  \"detailKaryawan\": {\r\n    \"id\": 0,\r\n    \"nik\": \"string\",\r\n    \"npwp\": \"string\"\r\n  },\r\n  \"dob\": \"string\",\r\n  \"id\": 0,\r\n  \"nama\": \"string\",\r\n  \"status\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Training",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pengajar\": \"string\",\r\n  \"tema\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/training/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"training",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"pengajar\": \"string\",\r\n  \"tema\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/training/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"training",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/training/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"training",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/idstar/training/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"training",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/training/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"training",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rekening",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jenis\": \"string\",\r\n  \"karyawan\": {\r\n    \"id\": 0\r\n  },\r\n  \"nama\": \"string\",\r\n  \"rekening\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/rekening/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"rekening",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"jenis\": \"string\",\r\n  \"karyawan\": {\r\n    \"id\": 0\r\n  },\r\n  \"nama\": \"string\",\r\n  \"rekening\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/rekening/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"rekening",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/rekening/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"rekening",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/idstar/rekening/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"rekening",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/rekening/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"rekening",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Training Karyawan",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"karyawan\": {\r\n    \"id\": 0\r\n  },\r\n  \"tanggal\": \"string\",\r\n  \"training\": {\r\n    \"id\": 0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan-training/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan-training",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"karyawan\": {\r\n    \"id\": 0\r\n  },\r\n  \"tanggal\": \"string\",\r\n  \"training\": {\r\n    \"id\": 0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan-training/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan-training",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan-training/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan-training",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan-training/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan-training",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/idstar/karyawan-training/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan-training",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "http://localhost:8081",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

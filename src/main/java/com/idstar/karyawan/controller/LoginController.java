@@ -215,11 +215,11 @@ public class LoginController {
             found.setOtp(otp);
             found.setOtpExpiredDate(expirationDate);
             template = template.replaceAll("\\{\\{USERNAME}}", (found.getUsername()));
-            template = template.replaceAll("\\{\\{VERIF_LINK}}", BASEURL + "register/web/index/" + otp);
+            template = template.replaceAll("\\{\\{VERIF_LINK}}", BASEURL + "user-register/web/index/" + otp);
             userRepository.save(found);
         } else {
             template = template.replaceAll("\\{\\{USERNAME}}", (found.getUsername()));
-            template = template.replaceAll("\\{\\{VERIF_LINK}}", BASEURL + "register/web/index/" + found.getOtp());
+            template = template.replaceAll("\\{\\{VERIF_LINK}}", BASEURL + "user-register/web/index/" + found.getOtp());
         }
         emailSender.sendAsync(found.getUsername(), APPNAME + "- Register", template);
         return response.Sukses(message);
