@@ -1,7 +1,7 @@
 package com.idstar.karyawan.dao.request;
 
 
-import com.idstar.karyawan.controller.validationpass.anotation.ValidPassword;
+import com.idstar.karyawan.validation.anotation.ValidPassword;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;

@@ -1,4 +1,4 @@
-package com.idstar.karyawan.controller.validationpass.web;
+package com.idstar.karyawan.validation.web;
 
 import lombok.*;
 

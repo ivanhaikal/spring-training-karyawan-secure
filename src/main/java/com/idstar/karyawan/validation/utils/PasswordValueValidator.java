@@ -1,18 +1,18 @@
-package com.idstar.karyawan.controller.validationpass.utils;
+package com.idstar.karyawan.validation.utils;
 
 
-import com.idstar.karyawan.controller.validationpass.anotation.PasswordValueMatch;
+import com.idstar.karyawan.validation.anotation.PasswordValueMatch;
 import org.springframework.beans.BeanWrapperImpl;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * <h2>PasswordFieldsValueMatchValidator</h2>
+ * <h2>PasswordValueValidator</h2>
  *
  * @author aek
  */
-public class PasswordFieldsValueMatchValidator implements ConstraintValidator<PasswordValueMatch, Object> {
+public class PasswordValueValidator implements ConstraintValidator<PasswordValueMatch, Object> {
 
     private String field;
     private String fieldMatch;

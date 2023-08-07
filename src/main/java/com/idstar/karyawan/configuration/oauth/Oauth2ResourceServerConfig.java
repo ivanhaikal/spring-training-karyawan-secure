@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @Configuration
 @EnableResourceServer
 @EnableGlobalMethodSecurity(securedEnabled = true) //secure definition
-public class Oauth2ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
+public class Oauth2ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     /**
      * Manage resource server.

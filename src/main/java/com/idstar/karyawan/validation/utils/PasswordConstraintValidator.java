@@ -1,7 +1,7 @@
-package com.idstar.karyawan.controller.validationpass.utils;
+package com.idstar.karyawan.validation.utils;
 
 
-import com.idstar.karyawan.controller.validationpass.anotation.ValidPassword;
+import com.idstar.karyawan.validation.anotation.ValidPassword;
 import lombok.SneakyThrows;
 import org.passay.*;
 

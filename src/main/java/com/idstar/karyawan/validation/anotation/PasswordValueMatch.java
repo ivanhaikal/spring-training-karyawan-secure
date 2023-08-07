@@ -1,9 +1,9 @@
-package com.idstar.karyawan.controller.validationpass.anotation;
+package com.idstar.karyawan.validation.anotation;
 
 
 
 
-import com.idstar.karyawan.controller.validationpass.utils.PasswordFieldsValueMatchValidator;
+import com.idstar.karyawan.validation.utils.PasswordValueValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -20,7 +20,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({ TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = PasswordFieldsValueMatchValidator.class)
+@Constraint(validatedBy = PasswordValueValidator.class)
 @Documented
 public @interface PasswordValueMatch {
 

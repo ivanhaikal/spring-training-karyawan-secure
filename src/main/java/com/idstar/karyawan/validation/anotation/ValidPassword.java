@@ -1,8 +1,8 @@
-package com.idstar.karyawan.controller.validationpass.anotation;
+package com.idstar.karyawan.validation.anotation;
 
 
 
-import com.idstar.karyawan.controller.validationpass.utils.PasswordConstraintValidator;
+import com.idstar.karyawan.validation.utils.PasswordConstraintValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
